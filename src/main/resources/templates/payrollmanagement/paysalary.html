@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<style type="text/css">
+body {
+	font-family: "Comic Sans MS", sans-serif;
+	margin: 0;
+	background-size: cover;
+}
+
+
+p{
+ color: red;
+}
+td {
+	color: gray;
+	padding: 7px;
+	font-size: 18px;
+}
+
+input[type='text'], input[type='number'], input[type='date'], input[type='month'],
+	input[type='password'] {
+	height: 40px;
+	border-radius: 20px;
+	border: none;
+	padding: 30;
+	text-align: center;
+	color: red;
+}
+
+footer {
+	text-align: center;
+}
+
+input[type='submit'] {
+	height: 30px;
+	border-radius: 10px;
+	border: none;
+	padding: 30;
+	text-align: center;
+	color: red;
+	background-color: orange;
+}
+</style>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<div style="background-color: DodgerBlue;">
+		<center>
+			<h2>Pay Salary FORM</h2>
+		</center>
+	</div>
+
+	<div style="background-color: orange;">
+		<marquee behavior="scroll" direction="left" style="color: blue">
+			A human resources management system (HRMS) or human resources
+			information system (HRIS) or human capital management (HCM) is a form
+			of human resources (HR) software that combines a number of systems
+			and processes to ensure the easy management of human resources,
+			business processes and data. Human resources software is used by
+			businesses to combine a number of necessary HR functions, such as
+			storing employee data, managing payrolls, recruitment processes,
+			benefits administration, and keeping track of attendance records. </marquee>
+	</div>
+
+
+
+	<form action="#" th:action="@{/hrms/paysalary}"
+		th:object="${employeeSalaryForm}" method="post">
+
+		<!-- <center><table style="width:50%">
+  <tr>
+   <td> Employee No   </td>
+   <td> <input type="text" th:field="*{emp_no}" placeholder="EmployeeNumber"></br></br></td>
+  </tr>
+
+   <tr>
+   <td>Basic Salary</td>
+   <td> <input type="text" th:field="*{basicsalary}" placeholder="BasicSalary"/></br></br></td>
+  </tr>
+  
+   <tr>
+   <td>HRA</td>
+   <td> <input type="text" th:field="*{hra}" placeholder="HRA"/></br></br></td>
+  </tr>
+  
+  <tr>
+   <td>other allowances</td>
+   <td> <input type="text" th:field="*{otherallowances}" placeholder="Otherallowances"/></br></br></td>
+  </tr>
+ 
+ 
+  <tr>
+   <td>Gross Salary(Basic Salary + HRA + other allowances) </td>
+   <td> <input type="text" th:field="*{grosssalary}" placeholder="GrossSalary"/></br></br></td>
+  </tr>
+  
+  <tr>
+   <td>PF</td>
+   <td> <input type="text" th:field="*{pf}" placeholder="PF"/></br></br></td>
+  </tr>
+  
+  <tr>
+   <td>CTC(Gross Salary + PF )
+ </td>
+   <td> <input type="text" th:field="*{ctc}" placeholder="CTC"/></br></br></td>
+  </tr>
+  
+   <tr>
+   <td>Deductions</td>
+   <td> <input type="text" th:field="*{deductions}" placeholder="Deductions"/></br></br></td>
+  </tr>
+  
+   <tr>
+   <td>Net Pay (Gross Salary - Deductions)</td>
+   <td> <input type="text" th:field="*{netpay}" placeholder="NetPay"/></br></br></td>
+  </tr>
+  
+  <tr>
+  <td> <input type="submit" Value="PAY"></td>
+  </tr>
+    
+</table></center>
+ -->
+
+		<div class="form-group">
+			<label for="emp_no">Employee Number</label> <input type="text"
+				class="form-control" th:field="*{emp_no}" />
+			<p th:if="${#fields.hasErrors('emp_no')}" th:errors="*{emp_no}"></p>
+		</div>
+
+		<div class="form-group">
+			<label for="basicsalary"> Basic Salary</label> <input type="text"
+				class="form-control" th:field="*{basicsalary}" />
+			<p th:if="${#fields.hasErrors('basicsalary')}"
+				th:errors="*{basicsalary}"></p>
+		</div>
+
+
+		<div class="form-group">
+			<label for="hra">HRA</label> <input type="text" class="form-control"
+				th:field="*{hra}" />
+			<p th:if="${#fields.hasErrors('hra')}" th:errors="*{hra}"></p>
+		</div>
+
+
+		<div class="form-group">
+			<label for="otherallowances"> Other Allowances</label> <input
+				type="text" class="form-control" th:field="*{otherallowances}" />
+			<p th:if="${#fields.hasErrors('otherallowances')}"
+				th:errors="*{otherallowances}"></p>
+		</div>
+
+
+		<div class="form-group">
+			<label for="grosssalary"> Gross Salary</label> <input type="text"
+				class="form-control" th:field="*{grosssalary}" />
+			<p th:if="${#fields.hasErrors('grosssalary')}"
+				th:errors="*{grosssalary}"></p>
+		</div>
+
+
+
+
+		<div class="form-group">
+			<label for="pf">PF</label> <input type="text" class="form-control"
+				th:field="*{pf}" />
+			<p th:if="${#fields.hasErrors('pf')}" th:errors="*{pf}"></p>
+		</div>
+
+
+		<div class="form-group">
+			<label for="ctc">CTC(Gross Salary + PF ) </label> <input type="text"
+				class="form-control" th:field="*{ctc}" />
+			<p th:if="${#fields.hasErrors('ctc')}" th:errors="*{ctc}"></p>
+		</div>
+
+		<div class="form-group">
+			<label for="deductions">Deductions </label> <input type="text"
+				class="form-control" th:field="*{deductions}" />
+			<p th:if="${#fields.hasErrors('deductions')}"
+				th:errors="*{deductions}"></p>
+		</div>
+
+		<div class="form-group">
+			<label for="netpay">Net Pay</label> <input type="text"
+				class="form-control" th:field="*{netpay}" />
+			<p th:if="${#fields.hasErrors('netpay')}" th:errors="*{netpay}"></p>
+		</div>
+
+
+		<div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+
+
+
+
+		<center>
+			<a th:href="@{/hrms/home}" class="btn btn-primary"> HOME </a> <a
+				th:href="@{/hrms/payrollmanagement}" class="btn btn-primary">
+				BACK </a></br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br>
+		</center>
+
+		<div style="background-color: DodgerBlue;">
+			<footer>
+				<h2>CopyRight &copy; 2018 Pioneer-Soft</h2>
+				<p>All Rights are Reserved</p>
+				<p>Developed & maintained by Pioneer-Soft</p>
+			</footer>
+		</div>
+
+
+	</form>
+</body>
+</html>

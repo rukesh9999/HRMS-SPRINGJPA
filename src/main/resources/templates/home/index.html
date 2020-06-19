@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style type="text/css">
+body {
+	font-family: "Comic Sans MS", sans-serif;
+	margin: 0;
+	background-size: cover;
+	color: white;
+	background-color: red;
+}
+
+details {
+	background-size: cover;
+	padding: 10px;
+	margin: 5px;
+	color: green;
+	border-radius: 50px;
+}
+
+details div {
+	background-color: rgba(97, 103, 50, 0.5);
+	padding: 10px;
+	color: green;
+	border-radius: 50px;
+}
+
+summary {
+	outline: none;
+}
+
+nav {
+	background-color: gray;
+	font-size: 30px;
+	font-family: sans-serif;
+}
+
+p {
+	background-color: orange;
+	text-align: center;
+	font-family: Sans-Serif. Arial;
+	color: green;
+}
+
+.social-nav {
+	font-size: 24px;
+	background-color: gray;
+	text-align: center;
+}
+
+.copyright {
+	font-size: 24px;
+	background-color: gray;
+	text-align: center;
+}
+
+.col-md-9 {
+	text-align: center;
+}
+</style>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="js/fontawesome-all.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/mdb.min.js"></script>
+
+</head>
+
+<body>
+
+	<section class="header">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-4">
+					<img th:src="@{/content/images/Logo.jpg}" />
+				</div>
+
+				<div class="col-md-4">
+					<p>HUMAN RESOURCE MANAGEMENT SYSTEM</p>
+					<center>
+						<img th:src="@{/content/images/human-resouces.jpg}" width="150"
+							height="150">
+					</center>
+				</div>
+
+
+				<div class="col-md-4">
+					<img th:src="@{/content/images/Logo.jpg}" />
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div style="background-color: orange;">
+		<marquee behavior="scroll" direction="right" style="color: blue">
+			A human resources management system (HRMS) or human resources
+			information system (HRIS) or human capital management (HCM) is a form
+			of human resources (HR) software that combines a number of systems
+			and processes to ensure the easy management of human resources,
+			business processes and data. Human resources software is used by
+			businesses to combine a number of necessary HR functions, such as
+			storing employee data, managing payrolls, recruitment processes,
+			benefits administration, and keeping track of attendance records. </marquee>
+	</div>
+
+
+	<div style="background-color: DodgerBlue;">
+		<h2>
+			<center>Welcome To HRMS</center>
+			</center>
+		</h2>
+	</div>
+
+
+	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+		<div class="btn-group btn-group-justified">
+			<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle" type="button"
+					data-toggle="dropdown">
+					HOME <span class="caret"></span>
+				</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" th:href="@{/hrms/home}">Home</a><br>
+					<a class="dropdown-item" th:href="@{/hrms/Contact-Us}">Contact-us</a><br>
+					<a class="dropdown-item" th:href="@{/hrms/About-Us}">About-us</a></br> <a
+						class="dropdown-item" href="logout.jsp">Log-out</a>
+				</div>
+				<a th:href="@{/hrms/login}" class="btn btn-primary">Login</a> <a
+					th:href="@{/hrms/showRegistrationPage}" class="btn btn-primary">Registration</a>
+				<a th:href="@{/hrms/leaves}" class="btn btn-primary">Leaves</a> <a
+					th:href="@{/hrms/projects}" class="btn btn-primary">Projects</a> <a
+					th:href="@{/hrms/employeeInfo}" class="btn btn-primary">EmployeeInformation</a>
+				<a th:href="@{/hrms/payrollmanagement}" class="btn btn-primary">PayrollManagement</a>
+				<a th:href="@{/hrms/CandidateRecruiting}" class="btn btn-primary">
+					CandidateRecruiting</a> <a th:href="@{/hrms/PerformanceReviews}"
+					class="btn btn-primary"> PerformanceReviews</a> <a
+					th:href="@{/hrms/About-Us}" class="btn btn-primary"> About-us</a> <a
+					th:href="@{/hrms/Contact-Us}" class="btn btn-primary">
+					Contact-us</a>
+
+			</div>
+		</div>
+	</nav>
+
+
+
+	<div style="background-color: orange;">
+		<marquee behavior="scroll" direction="left" style="color: blue">
+			A human resources management system (HRMS) or human resources
+			information system (HRIS) or human capital management (HCM) is a form
+			of human resources (HR) software that combines a number of systems
+			and processes to ensure the easy management of human resources,
+			business processes and data. Human resources software is used by
+			businesses to combine a number of necessary HR functions, such as
+			storing employee data, managing payrolls, recruitment processes,
+			benefits administration, and keeping track of attendance records. </marquee>
+	</div>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<details>
+					<summary>What is HRMS software?</summary>
+					<div>
+						<h4>What is HRMS software?</h4>
+						<p>HRMS stands for Human Resource Management System. HRMS is
+							used for hiring, training, managing, evaluating and maintaining
+							information of all employees (Human Resource) in an organization.
+							In some cases HRMS software is also known as HRIS, Human Resource
+							Information System.</p>
+					</div>
+				</details>
+			</div>
+
+			<div class="col-md-4">
+				<details>
+					<summary>Functions Of HRMS</summary>
+					<div>
+						<h4>Functions Of HRMS</h4>
+						<p>Retaining staff,Hiring,Administration,Managing
+							payroll,Tracking and Managing employee benefits,HR planning
+							Recruiting/Learning management,Performance management and
+							appraisals,Employee self-service,Absence management,Leave
+							management,Reporting and analytics,Employee reassignment</p>
+					</div>
+				</details>
+			</div>
+
+
+			<div class="col-md-4">
+				<details>
+					<summary>How do HRMS work?</summary>
+					<div>
+						<h4>How do HRMS work?</h4>
+						<p>An HRMS (Human Resource Management System) is a type of HR
+							software that enables the management of several HR functions
+							through the use of information technology. An HRMS aims to
+							improve the productivity and efficiency of the business through
+							the automation of manual and repetitive tasks</p>
+					</div>
+				</details>
+			</div>
+		</div>
+	</div>
+
+	<div style="background-color: orange; text-align: center">
+		<h4>Pioneer-Soft, Hyderabad</h4>
+	</div>
+
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-0"></div>
+
+			<div class="col-md-12">
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+					</ol>
+
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner">
+
+						<div class="item active">
+							<img th:src="@{/content/images/hrms9.png}" class="d-block w-100"
+								width="100%" alt="HRMS PROJECTS">
+							<div class="carousel-caption">
+								<h3>PROJECTS INFORMATION</h3>
+								<p>Employee Project Information</p>
+							</div>
+						</div>
+
+						<div class="item">
+							<img th:src="@{/content/images/hrms4.png}" class="d-block w-100"
+								width="100%" alt="Chicago">
+							<div class="carousel-caption">
+								<h3>EMPLOYEE INFORMSTION</h3>
+								<p>Employee Deatils</p>
+							</div>
+						</div>
+
+						<div class="item">
+							<img th:src="@{/content/images/hrms2.jpg}" class="d-block w-100"
+								width="100%" alt="New York">
+							<div class="carousel-caption">
+								<h3>EMPLOYEE LEAVES</h3>
+								<p>Employee Leaves information</p>
+							</div>
+						</div>
+
+					</div>
+
+					<!-- Left and right controls -->
+					<a class="left carousel-control" href="#myCarousel"
+						data-slide="prev"> <span
+						class="glyphicon glyphicon-chevron-left"></span> <span
+						class="sr-only">Previous</span>
+					</a> <a class="right carousel-control" href="#myCarousel"
+						data-slide="next"> <span
+						class="glyphicon glyphicon-chevron-right"></span> <span
+						class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+			<div class="col-md-0"></div>
+		</div>
+	</div>
+
+
+	<div style="background-color: orange; text-align: center">
+		<h4>Pioneer-Soft, Hyderabad</h4>
+	</div>
+
+	<div class="container">
+		<div class="accordion">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="card" style="background-color: green">
+						<div class="card-header bg-teal text-white text-center"
+							style="background: green" data-toggle="collapse"
+							data-target="#html">
+							<h3>What are benefits of training?</h3>
+						</div>
+						<div class="collapse" id="html">
+							<div class="card-body text-center" style="background-color: blue">
+								<h3>What are benefits of training?</h3>
+								<p>General Benefits from Employee Training and Development
+									These reasons include: Increased job satisfaction and morale
+									among employees. Increased employee motivation. Increased
+									efficiencies in processes, resulting in financial gain.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="card" style="background-color: orange">
+						<div class="card-header bg-teal text-white text-center"
+							style="background-color: orange;" data-toggle="collapse"
+							data-target="#css">
+							<h3>What is an objective in HR?</h3>
+						</div>
+						<div class="collapse" id="css">
+							<div class="card-body text-center" style="background-color: blue">
+								<h3>What is an objective in HR?</h3>
+								<p>A human resources objective is a procedural step that
+									contributes to an organization's achievement of its goals. ...
+									Therefore, an HR objective is a department-specific step or
+									process that enables the HR department to make a contribution
+									to the organization's strategic direction.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card" style="background-color: gray">
+						<div class="card-header bg-teal text-white text-center"
+							style="background-color: gray" data-toggle="collapse"
+							data-target="#js">
+							<h3>objectives of recruitment?</h3>
+						</div>
+						<div class="collapse" id="js">
+							<div class="card-body text-center" style="background-color: blue">
+								<h3>objectives of recruitment?</h3>
+								<p>The main objective of recruitment process is when a
+									vacancy comes up; the employer needs to get a most suitable
+									candidate available for the job. The objective, of selection
+									process is to get a best applicant available who meets all the
+									selection criteria.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div style="background-color: orange; text-align: center">
+		<h4>Pioneer-Soft, Hyderabad</h4>
+	</div>
+
+
+	<div class="container">
+		<div class="row">
+			<center>
+				<div class="col-md-4">
+					<h2>About HRMS in Hindi</h2>
+					<iframe width="350" height="250"
+						src="https://www.youtube-nocookie.com/embed/TiBJQWQjdFQ"
+						frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+					<p>A Human Resources Management System (HRMS) is a software
+						application that combines many human resources functions,
+						including benefits administration, payroll, recruiting and
+						training, and performance analysis and review into one package.</p>
+				</div>
+			</center>
+
+			<center>
+				<div class="col-md-4">
+					<h2>About HRMS in English</h2>
+					<iframe width="350" height="250"
+						src="https://www.youtube-nocookie.com/embed/c90lL6OiBnY?start=55"
+						frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+					<p>A Human Resources Management System (HRMS) is a software
+						application that combines many human resources functions,
+						including benefits administration, payroll, recruiting and
+						training, and performance analysis and review into one package.</p>
+				</div>
+			</center>
+
+			<center>
+				<div class="col-md-4">
+					<h2>About HRMS in Telugu</h2>
+					<iframe width="350" height="250"
+						src="https://www.youtube-nocookie.com/embed/xXyjD6HqHl0?start=1"
+						frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+					<p>A Human Resources Management System (HRMS) is a software
+						application that combines many human resources functions,
+						including benefits administration, payroll, recruiting and
+						training, and performance analysis and review into one package.</p>
+				</div>
+			</center>
+		</div>
+	</div>
+
+
+	<div style="background-color: orange; text-align: center">
+		<h4>Pioneer-Soft, Hyderabad</h4>
+	</div>
+
+
+	<div class="container">
+		<div style="background-color: orange;">
+			<marquee behavior="scroll" direction="left" style="color: blue">
+				<img th:src="@{/content/images/Employees.jpg}" width="150%"
+					height="50%"> <img th:src="@{/content/images/Employees.jpg}"
+					width="150%" height="50%"> <img
+					th:src="@{/content/images/Employees.jpg}" width="150%" height="50%">
+
+			</marquee>
+		</div>
+	</div>
+
+	<div style="background-color: orange; text-align: center">
+		<h4>Pioneer-Soft, Hyderabad</h4>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<center>
+				<div class="col-md-4">
+					<h2>HR Policies</h2>
+					<p>At-will employment. ... Anti-harassment and
+						non-discrimination. ... Employment classifications. ... Leave and
+						time off benefits. ... Meal and break periods. ... Timekeeping and
+						pay. ... Safety and health. ... Employee conduct, attendance and
+						punctuality.</p>
+				</div>
+			</center>
+
+			<center>
+				<div class="col-md-4">
+					<h2>HR Tools</h2>
+					<p>HRMS (Human Resource Management System) or HRIS (Human
+						Resource Information System) ... Performance solutions. ...
+						Recruiting software. ... Payroll service. ... Benefits management
+						platform. ... Employee engagement tools.</p>
+				</div>
+			</center>
+
+			<center>
+				<div class="col-md-4">
+					<h2>HR Activities</h2>
+					<p>ob analysis and job design: ... Recruitment and selection of
+						retail employees: ... Training and development: ... Performance
+						Management: ... Compensation and Benefits: ... Labor Relations:
+						... Managerial Relations: Employee and Labor Relations. ...</p>
+				</div>
+			</center>
+		</div>
+	</div>
+
+
+	<div style="background-color: orange; text-align: center">
+		<h4>Pioneer-Soft, Hyderabad</h4>
+	</div>
+
+	<center>
+		<div style="background-color: Gray;">
+			<footer>
+				<h2>Copyright &copy; 2018 CMGI - All Rights Reserved -
+					Pioneer-Soft, Hyderabad</h2>
+				<h4>All Rights are Reserved</h4>
+				<h5>Developed & maintained by Pioneer-Soft</h5>
+			</footer>
+		</div>
+	</center>
+
+
+</body>
+</html>

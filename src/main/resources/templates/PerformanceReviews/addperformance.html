@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<style>
+body {
+	font-family: "Comic Sans MS", sans-serif;
+	margin: 0;
+	background-size: cover;
+}
+
+p {
+	color: red;
+}
+
+td {
+	color: gray;
+	padding: 7px;
+	font-size: 18px;
+}
+
+input[type='text'], input[type='number'], input[type='date'], input[type='month'],
+	input[type='password'] {
+	height: 40px;
+	border-radius: 20px;
+	border: none;
+	padding: 30;
+	text-align: center;
+	color: red;
+}
+
+footer {
+	text-align: center;
+}
+
+input[type='submit'] {
+	height: 30px;
+	border-radius: 10px;
+	border: none;
+	padding: 30;
+	text-align: center;
+	color: red;
+	background-color: orange;
+}
+</style>
+
+
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<div style="background-color: DodgerBlue;">
+		<center>
+			<h2>SaveEmployeePerformanceAndReview</h2>
+		</center>
+	</div>
+
+
+	<form action="#" th:action="@{/hrms/addperformance}"
+		th:object="${employeePerformanceAndReviewForm}" method="post">
+		<!-- <center><table style="width:50%" >
+  <tr>
+   <td>  Employee No   </td>
+   <td> <input type="text" th:field="*{employee_no}"></td>
+  </tr></br>
+ 
+   
+  <tr>
+   <td>Communication</td>
+  <td>    
+  <input type="radio" id="Communication" th:field="*{communication}" value="good">
+  <label for="good">good</label>
+  <input type="radio" id="Communication" th:field="*{communication}" value="average">
+  <label for="average">average</label>
+  <input type="radio" id="Communication" th:field="*{communication}" value="worst">
+  <label for="worst">worst</label>   
+  </tr></br>
+ 
+   <tr>
+   <td>Coding Skills</td>
+   <td>    
+  <input type="radio" id="coding_skills" th:field="*{coding_skills}" value="good">
+  <label for="good">good</label>
+  <input type="radio" id="coding_skills" th:field="*{coding_skills}" value="average">
+  <label for="average">average</label>
+  <input type="radio" id="coding_skills" th:field="*{coding_skills}" value="worst">
+  <label for="worst">worst</label></td>
+                                                                            
+  </tr></br>
+  
+  
+  <tr>
+   <td>Team-work</td>
+ <td> <input type="radio" id="teamwork" name="teamwork" value="good">
+  <label for="good">good</label>
+  <input type="radio" id="teamwork" name="teamwork" value="average">
+  <label for="average">average</label>
+  <input type="radio" id="teamwork" name="teamwork" value="worst">
+  <label for="worst">worst</label></td>
+   </tr>
+  
+    <tr>
+   <td>Leadership</td>
+    <td> <input type="radio" id="leadership" name="leadership" value="good">
+  <label for="good">good</label>
+  <input type="radio" id="leadership" name="leadership" value="average">
+  <label for="average">average</label>
+  <input type="radio" id="leadership" name="leadership" value="worst">
+  <label for="worst">worst</label></td>
+
+  </tr>
+  
+  <tr>
+   <td>Goal-Setting</td>
+    <td> <input type="radio" id="goal_setting" name="goal_setting" value="good">
+  <label for="good">good</label>
+  <input type="radio" id="goal_setting" name="goal_setting" value="average">
+  <label for="average">average</label>
+  <input type="radio" id="goal_setting" name="goal_setting" value="worst">
+  <label for="worst">worst</label></td>
+  </tr>
+  
+  <tr>
+   <td>Time-management</td>
+    <td> <input type="radio" id="timemanagement" name="timemanagement" value="good">
+  <label for="good">good</label>
+  <input type="radio" id="timemanagement" name="timemanagement" value="average">
+  <label for="average">average</label>
+  <input type="radio" id="timemanagement" name="timemanagement" value="worst">
+  <label for="worst">worst</label></td>
+
+  </tr>
+ 
+  <tr>
+   <td>Attendance</td>
+    <td> <input type="radio" id="attendance" name="attendance" value="good">
+  <label for="good">good</label>
+  <input type="radio" id="attendance" name="attendance" value="average">
+  <label for="average">average</label>
+  <input type="radio" id="attendance" name="attendance" value="worst">
+  <label for="worst">worst</label></td>
+
+  </tr>
+ 
+ 
+  <tr>
+   <td>Overall-Performance</td>
+    <td> <input type="radio" id="overall_performance" name="overall_performance" value="good">
+  <label for="good">good</label>
+  <input type="radio" id="OverallPerformance" name="overall_performance" value="average">
+  <label for="average">average</label>
+  <input type="radio" id="overall_performance" name="overall_performance" value="worst">
+  <label for="worst">worst</label></td>
+
+  </tr>
+ 
+ <tr>
+   <td>Type-of-Band</td>
+    <td> <input type="radio" id="type_of_band" name="type_of_band" value="A-band">
+  <label for="A-band">A-band</label>
+  <input type="radio" id="type_of_band" name="type_of_band" value="B-band">
+  <label for="B-band">B-band</label>
+  <input type="radio" id="type_of_band" name="type_of_band" value="C-band">
+  <label for="C-band">C-band</label></td>
+
+  </tr>
+  
+  <tr>
+    <td><input type="submit" Value="SUBMIT"></td>
+  </tr>
+ 
+</table></center>
+ -->
+
+		<div class="form-group">
+			<label for="employee_no">Employee Number</label> <input type="text"
+				class="form-control" th:field="*{employee_no}">
+			<p th:if="${#fields.hasErrors('employee_no')}"
+				th:errors="*{employee_no}"></p>
+		</div>
+
+
+		<label for="communication">Communication</label>
+		<div class="form-check">
+			<label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{communication}" value="good">good
+			</label> <label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{communication}" value="average">average
+			</label> <label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{communication}" value="worst">worst
+			</label>
+			<p th:if="${#fields.hasErrors('communication')}"
+				th:errors="*{communication}"></p>
+		</div>
+
+		<label for="coding_skills">Coding Skills</label>
+		<div class="form-check">
+			<label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{coding_skills}" value="good">good
+			</label> <label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{coding_skills}" value="average">average
+			</label> <label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{coding_skills}" value="worst">worst
+
+			</label>
+			<p th:if="${#fields.hasErrors('coding_skills')}"
+				th:errors="*{coding_skills}"></p>
+		</div>
+
+		<label for="teamwork">Team-work</label>
+		<div class="form-check">
+			<label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{teamwork}" value="good">good
+			</label> <label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{teamwork}" value="average">average
+			</label> <label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{teamwork}" value="worst">worst
+			</label>
+			<p th:if="${#fields.hasErrors('teamwork')}" th:errors="*{teamwork}"></p>
+		</div>
+
+
+		<label for="leadership">Leadership</label>
+		<div class="form-check">
+			<label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{leadership}" value="good">good
+			</label> <label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{leadership}" value="average">average
+			</label> <label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{leadership}" value="worst">worst
+			</label>
+			<p th:if="${#fields.hasErrors('leadership')}"
+				th:errors="*{leadership}"></p>
+		</div>
+
+
+		<label for="goal_setting">Goal-Setting</label>
+		<div class="form-check">
+			<label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{goal_setting}" value="good">good
+			</label> <label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{goal_setting}" value="average">average
+			</label> <label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{goal_setting}" value="worst">worst
+			</label>
+			<p th:if="${#fields.hasErrors('goal_setting')}"
+				th:errors="*{goal_setting}"></p>
+		</div>
+
+
+		<label for="timemanagement">Time-Management</label>
+		<div class="form-check">
+			<label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{timemanagement}" value="good">good
+			</label> <label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{timemanagement}"
+				value="average">average
+			</label> <label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{timemanagement}" value="worst">worst
+			</label>
+			<p th:if="${#fields.hasErrors('timemanagement')}"
+				th:errors="*{timemanagement}"></p>
+		</div>
+
+
+
+		<label for="attendance">Attendance</label>
+		<div class="form-check">
+			<label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{attendance}" value="good">good
+			</label> <label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{attendance}" value="average">average
+			</label> <label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{attendance}" value="worst">worst
+			</label>
+			<p th:if="${#fields.hasErrors('attendance')}"
+				th:errors="*{attendance}"></p>
+		</div>
+
+		<label for="overall_performance">Overall-Performance</label>
+		<div class="form-check">
+			<label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{overall_performance}"
+				value="good">good
+			</label> <label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{overall_performance}"
+				value="average">average
+			</label> <label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{overall_performance}"
+				value="worst">worst
+			</label>
+			<p th:if="${#fields.hasErrors('overall_performance')}"
+				th:errors="*{overall_performance}"></p>
+		</div>
+
+		<label for="type_of_band">Type-of-Band</label>
+		<div class="form-check">
+			<label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{type_of_band}" value="A-band">A-band
+			</label> <label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field="*{type_of_band}" value="B-band">B-band
+			</label> <label class="form-check-label"> <input type="radio"
+				class="form-check-input" th:field=*{type_of_band} value="C-band">C-band
+			</label>
+			<p th:if="${#fields.hasErrors('type_of_band')}"
+				th:errors="*{type_of_band}"></p>
+		</div>
+
+		<div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+
+		<center>
+			<a th:href="@{/hrms/home}" class="btn btn-primary"> HOME </a> <a
+				th:href="@{/hrms/PerformanceReviews}" class="btn btn-primary">BACK</a></br>
+			</br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br>
+		</center>
+
+		<div style="background-color: orange;">
+			<marquee behavior="scroll" direction="left" style="color: blue">
+				A human resources management system (HRMS) or human resources
+				information system (HRIS) or human capital management (HCM) is a
+				form of human resources (HR) software that combines a number of
+				systems and processes to ensure the easy management of human
+				resources, business processes and data. Human resources software is
+				used by businesses to combine a number of necessary HR functions,
+				such as storing employee data, managing payrolls, recruitment
+				processes, benefits administration, and keeping track of attendance
+				records. </marquee>
+		</div>
+
+		<div style="background-color: DodgerBlue;">
+			<footer>
+				<h2>CopyRight &copy; 2018 Pioneer-Soft</h2>
+				<p>All Rights are Reserved</p>
+				<p>Developed & maintained by Pioneer-Soft</p>
+			</footer>
+		</div>
+	</form>
+</body>
+</html>

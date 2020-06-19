@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<style type="text/css">
+body {
+	font-family: "Comic Sans MS", sans-serif;
+	margin: 0;
+	background-size: cover;
+}
+
+p {
+	color: red;
+}
+
+td {
+	color: gray;
+	padding: 7px;
+	font-size: 18px;
+}
+
+input[type='text'], input[type='number'], input[type='date'], input[type='month'],
+	input[type='password'] {
+	height: 40px;
+	border-radius: 20px;
+	border: none;
+	padding: 30;
+	text-align: center;
+	color: red;
+}
+
+footer {
+	text-align: center;
+}
+
+input[type='submit'] {
+	height: 30px;
+	border-radius: 10px;
+	border: none;
+	padding: 30;
+	text-align: center;
+	color: red;
+	background-color: orange;
+}
+</style>
+
+
+
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<div style="background-color: DodgerBlue;">
+		<center>
+			<h2>ADD Recruited Candidate FORM</h2>
+		</center>
+	</div>
+
+	<div style="background-color: orange;">
+		<marquee behavior="scroll" direction="left" style="color: blue">
+			A human resources management system (HRMS) or human resources
+			information system (HRIS) or human capital management (HCM) is a form
+			of human resources (HR) software that combines a number of systems
+			and processes to ensure the easy management of human resources,
+			business processes and data. Human resources software is used by
+			businesses to combine a number of necessary HR functions, such as
+			storing employee data, managing payrolls, recruitment processes,
+			benefits administration, and keeping track of attendance records. </marquee>
+	</div>
+
+
+
+	<form action="#" th:action="@{/hrms/AddRecruitedCandidate}"
+		th:object="${recruitedCandidateForm}" method="post">
+
+		<!-- <center><table style="width:80%">
+  <tr>
+   <td> ID   </br></br></td>
+   <td> <input type="text" th:field="*{id}" placeholder="ID" ></td>
+  </tr>
+  
+  <tr>
+   <td> FullName   </br></br></td>
+   <td> <input type="text" th:field="*{full_name}" placeholder="FullName" ></td>
+  </tr>
+ 
+   
+    <tr>
+   <td>Year OF PassedOut</td>
+   <td>   <input type="text"  th:field="*{year_of_passed_out}" placeholder="YearOfPassedOut"></br></br></td>
+  </tr>
+  
+  
+  
+  
+   <tr>
+   <td>Percentage</td>
+   <td>   <input type="text"  th:field="*{percentage}"  placeholder="Percentage"></br></br></td>
+  </tr>
+  
+  
+       <tr>
+   <td> Branch </td>
+   <td><select name = "*{branch}">
+                    <option value = "ECE  ">ECE </option>
+                    <option value = "CSC "> CSC </option>
+                    <option value = "EEE ">EEE </option>
+                    <option value = " CIVIL  ">CIVIL </option>
+                    <option value = " MECHANICAL"> MECHANICAL </option>
+                    </select></br></br>
+   </td>
+  </tr>
+
+ <tr>
+<td colspan="2"><input type="submit" Value="ADD" ></td>
+</tr>
+
+ </table></center>
+ -->
+
+		<!-- <div class="form-group">
+			<label for="id">ID</label> <input type="text" class="form-control"
+				th:field="*{id}">
+			<p th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></p>
+		</div>
+ -->
+
+		<div class="form-group">
+			<label for="id">ID</label> <input type="text" class="form-control"
+				th:field="*{id}">
+			<p th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></p>
+		</div>
+		<div class="form-group">
+			<label for="full_name">FullName</label> <input type="text"
+				class="form-control" th:field="*{full_name}">
+			<p th:if="${#fields.hasErrors('full_name')}" th:errors="*{full_name}"></p>
+		</div>
+
+		<div class="form-group">
+			<label for="year_of_passed_out">Year OF PassedOut</label> <input
+				type="text" class="form-control" th:field="*{year_of_passed_out}">
+			<p th:if="${#fields.hasErrors('year_of_passed_out')}"
+				th:errors="*{year_of_passed_out}"></p>
+		</div>
+
+		<div class="form-group">
+			<label for="percentage">Percentage</label> <input type="text"
+				th:field="*{percentage}" class="form-control" />
+			<p th:if="${#fields.hasErrors('percentage')}"
+				th:errors="*{percentage}"></p>
+		</div>
+
+
+		<div class="form-group">
+			<label for="branch">Branch</label> <select class="form-control"
+				th:field="*{branch}">
+				<option value="ECE">ECE</option>
+				<option value="CSC">CSC</option>
+				<option value="EEE">EEE</option>
+				<option value="CIVIL">CIVIL</option>
+				<option value="MECHANICAL">MECHANICAL</option>
+			</select>
+			<p th:if="${#fields.hasErrors('branch')}" th:errors="*{branch}"></p>
+		</div>
+
+		<div>
+			<button class="btn btn-success" type="submit">ADD</button>
+		</div>
+
+		<center>
+			<a th:href="@{/hrms/home}" class="btn btn-primary"> HOME </a> <a
+				th:href="@{/hrms/CandidateRecruiting}" class="btn btn-primary">
+				BACK </a></br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br>
+		</center>
+
+		<div style="background-color: DodgerBlue;">
+			<footer>
+				<h2>CopyRight &copy; 2018 Pioneer-Soft</h2>
+				<p>All Rights are Reserved</p>
+				<p>Developed & maintained by Pioneer-Soft</p>
+			</footer>
+		</div>
+
+
+	</form>
+</body>
+</html>

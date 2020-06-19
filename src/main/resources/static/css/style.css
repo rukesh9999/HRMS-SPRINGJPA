@@ -1,0 +1,13 @@
+/* Your custom styles */
+.carousel .carousel-indicators li {
+    max-width: 30px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50% !important;
+    cursor: pointer;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: " \\ ";
+    color: red;
+}
