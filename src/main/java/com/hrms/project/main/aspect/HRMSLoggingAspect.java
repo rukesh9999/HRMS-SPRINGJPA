@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class HRMSLoggingAspect {
  //setup Logger
-private Logger mylogger=Logger.getLogger(getClass().getName());	
+private Logger mylogger = Logger.getLogger(getClass().getName());	
 	
 //setup pointcut declarations for controllers
 

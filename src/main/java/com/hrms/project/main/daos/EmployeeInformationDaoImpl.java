@@ -34,6 +34,7 @@ public class EmployeeInformationDaoImpl implements EmployeeInformationDao {
 				.getResultList();
 
 		for (Object[] result : results) {
+			System.out.println("result...."+result);
 			employeeCompleteInfoForm = new EmployeeCompleteInfoForm();
 			int emp_no = (int) result[0];
 			String emp_name = (String) result[1];
@@ -75,6 +76,7 @@ public class EmployeeInformationDaoImpl implements EmployeeInformationDao {
 
 		for (Object[] result : results) {
 			employeeCompleteInfoForm = new EmployeeCompleteInfoForm();
+			System.out.println("from dao..."+result);
 			int emp_no = (int) result[0];
 			String emp_name = (String) result[1];
 			String email_id = (String) result[2];

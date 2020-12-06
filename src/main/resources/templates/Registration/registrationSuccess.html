@@ -47,7 +47,7 @@ td{
 
 <center><p th:text="'Employee......'   +*{employeeRegistrationModel.emp_no}+  '   Registered    successfully'" /></center>
  
- <center><a href="@{/hrms/login}" class="btn btn-primary">Employee Login</a></center></br></br> 
+ <center><a  th:href="@{/hrms/login}" class="btn btn-primary">Employee Login</a></center></br></br> 
   <center><a th:href="@{/hrms/home}"  class="btn btn-primary"> HOME </a>
   <a th:href="@{/hrms/showRegistrationPage}" class="btn btn-primary"> BACK </a></br></br></br></br></br></br></br></br></br></br></br></br></br></br></center> 
   

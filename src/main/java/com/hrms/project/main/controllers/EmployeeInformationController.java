@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -52,7 +53,7 @@ public class EmployeeInformationController {
 		return mv;
 	}
 
-	@GetMapping("/IndividualEmployeeInfo")
+	@PostMapping("/IndividualEmployeeInfo")
 	public ModelAndView GetIndividualEmployeeInfo(
 			@Valid @ModelAttribute("employeeCompleteInfoForm") EmployeeCompleteInfoForm employeeCompleteInfoForms,
 			BindingResult errors) {
@@ -61,6 +62,7 @@ public class EmployeeInformationController {
 			mv.setViewName("EmployeeInformation/getIndividualEmployeeInfo");
 		} else {
 			EmployeeCompleteInfoForm employeeCompleteInfoForm = employeeInformationService.getIndividualEmployeeInfo(employeeCompleteInfoForms.getEmp_no());
+			System.out.println("employeeCompleteInfoForm..........."+employeeCompleteInfoForm);
 			mv.addObject("employeeCompleteInfoForm", employeeCompleteInfoForm);
 			mv.setViewName("EmployeeInformation/IndividualEmployeeInfo");
 		}
@@ -74,6 +76,7 @@ public class EmployeeInformationController {
 		ModelAndView mv = new ModelAndView();
 		List<EmployeeCompleteInfoForm> listOfEmployeeCompleteInfoForm = employeeInformationService.getAllEmployeesInfo();
 		mv.addObject("listOfEmployeeCompleteInfoForm", listOfEmployeeCompleteInfoForm);
+		System.out.println("listOfEmployeeCompleteInfoForm...."+listOfEmployeeCompleteInfoForm);
 		mv.setViewName("EmployeeInformation/AllEmployeesInfo");
 		return mv;
 	}

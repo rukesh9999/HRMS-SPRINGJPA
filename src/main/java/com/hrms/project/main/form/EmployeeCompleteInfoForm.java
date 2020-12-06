@@ -14,6 +14,9 @@ public class EmployeeCompleteInfoForm {
 	protected String employee_performance;
 	protected String type_of_band;
 	protected Double ctc;
+	
+	
+	
 	public Integer getEmp_no() {
 		return emp_no;
 	}
